@@ -2,21 +2,32 @@
 
 ![](http://i.imgur.com/usJ19zp.jpg)
 
-stupidbird fly first!
+笨鸟先飞早起多吃身体好飞的快
 
 
 0. 目前进度
 ----------
-【TODO】
+【TODO 1期】
 
 1. 模板层？
-2. cassandra需要实体层自动生成的功能，或者寻找类似mongo-morphia这样的框架。
-3. db的集群采用自己开发的router层或者使用mongos类似的方案。
+2. 消息拦截机制
+3. 脚本机制（java或者js类脚本）
 4. 缓存层：本地缓存 + memcached + redis的方案接入。
-5. 对象间通信，如何更好的封装actor，使用和理解起来都更容易？
-6. 设计cluster集群方案或可以参考gossip协议实现。
-7. 慢查询日志
-8. 资源监控系统
+5. 对象间通信，如何更好的封装actor，使用和理解起来都更容易？（done）
+
+【TODO 2期】
+
+1. 慢查询日志
+2. 更快更容易的启动。
+3. 更少的接口，facade化，更容易学习。
+
+
+【TODO 3期】
+
+1. cassandra需要实体层自动生成的功能，或者寻找类似mongo-morphia这样的框架。
+2. db的集群采用自己开发的router层或者使用mongos类似的方案。
+3. 设计cluster集群方案或可以参考gossip协议实现。
+4. 资源监控以及异常报警处理
 
 0.1. dependency injection
 ----------
@@ -59,23 +70,21 @@ stupidbird fly first!
 
 0.2. 整体层次
 ----------
-1. 消息层，
-2. 网络层，
-3. 序列化层，
-4. 业务层，
-5. 任务层，
-6. 缓存层，
-7. 数据层
+1. 消息层 : protobuf packet
+2. 网络层 : mina
+3. 序列化层 : protobuf
+4. 业务层 : guice + Fronter + module
+5. 执行层 : actor
+6. 缓存层 : local + redis + memcached strategy
+7. 数据层 : strategy - mongo + morphia
 
 1. 线程结构
 ----------
-1. 业务层多线程，可配置
-2. 数据层多线程，可配置
+多线程驱动，graceful stop。actor communication。
 
 2. 并发安全
 ----------
-1. 高级抽象使用类似活动对象的结构。ActiveObject。
-2. 线程安全管理器。ThreadSafeManager。
+thread bind object and use actor communicate way
 
 3. 缓存层
 ----------
