@@ -7,27 +7,34 @@
 
 0. 目前进度
 ----------
-【TODO 1期】
+【整体】
 
-1. 模板层？
-2. 消息拦截机制
-3. 脚本机制（java或者js类脚本）
-4. 缓存层：本地缓存 + memcached + redis的方案接入。
-5. 对象间通信，如何更好的封装actor，使用和理解起来都更容易？（done）
+1. 核心库目前1w行代码。
+2. 下面的第一个版本基本完成了开发。
 
-【TODO 2期】
+
+【version1】
+
+1. 模板层。使用wow机制。（done）
+2. 缓存层：本地缓存 + memcached + redis + ssdb的方案接入。（done）
+3. 对象间通信，如何更好的封装actor，使用和理解起来都更容易？（done）
+
+【version1.1】
 
 1. 慢查询日志
 2. 更快更容易的启动。
 3. 更少的接口，facade化，更容易学习。
+4. 模板层类自动生成。
 
 
-【TODO 3期】
+【version1.2】
 
 1. cassandra需要实体层自动生成的功能，或者寻找类似mongo-morphia这样的框架。
 2. db的集群采用自己开发的router层或者使用mongos类似的方案。
 3. 设计cluster集群方案或可以参考gossip协议实现。
 4. 资源监控以及异常报警处理
+5. 脚本机制（java或者js类脚本）
+6. 消息拦截机制
 
 0.1. dependency injection
 ----------
@@ -106,4 +113,9 @@ thread bind object and use actor communicate way
 3. redis
 4. mysql
 5. mongodb
+
+5. java8的使用
+----------
+目前只使用了lambda表达式的部分，后续可能会尝试stream处理，但是首先要保证性能。
+
 
