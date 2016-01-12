@@ -77,7 +77,7 @@
 
 上张图看看，这是用[Dick](https://github.com/crazyjohn/Dick)我的flash前端引擎，实现对基于stupidbird的游戏服务器接入：登陆创建角色选角色进场景后的截图：
 
-![](http://i.imgur.com/daOhfhL.jpg)
+![](http://i.imgur.com/BnUuARR.jpg)
 
 
 4. 深入了解引擎
