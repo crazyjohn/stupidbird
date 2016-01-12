@@ -75,6 +75,6 @@
 ----------
 
 
-3. 深入了解引擎
+4. 深入了解引擎
 ----------
 [StupidBird引擎wiki](https://github.com/crazyjohn/stupidbird/wiki)
