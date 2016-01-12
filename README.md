@@ -6,9 +6,9 @@
 
 这个logo是我借的，罪过罪过，大概表达了我希望的logo样子。坐等@bobo给我搞定logo
 
-1. 启动一个节点
+1. 启动一个Server节点
 ----------
-1. 构建一个server节点
+ 构建一个server节点
 
 	public class ServerApp {
 	
@@ -30,7 +30,9 @@
 
 	如日志内容所说，目前启动了一个绑定本地ip，端口8001的服务。
 
-2. 创建一个Comander指挥官节点。
+2. 启动一个Comander节点
+----------
+构建一个Commander指挥官节点
 
 		public class CommanderServerApp {
 		
@@ -69,7 +71,7 @@
 
 	
 
-2. 更完整的一个例子
+3. 更完整的一个例子
 ----------
 
 
