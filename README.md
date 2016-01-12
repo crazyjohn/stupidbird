@@ -1,12 +1,12 @@
 # stupidbird
 
-![](http://i.imgur.com/usJ19zp.jpg)
+![](http://i.imgur.com/T6rMWW8.jpg)
 
 笨鸟先飞早起多吃身体好飞的快
 
 这个logo是我借的，罪过罪过，大概表达了我希望的logo样子。坐等@bobo给我搞定logo
 
-1. 怎么使用
+1. 启动一个节点
 ----------
 1. 构建一个server节点
 
@@ -69,4 +69,10 @@
 
 	
 
-	
+2. 更完整的一个例子
+----------
+
+
+3. 深入了解
+----------
+[StupidBird引擎wiki](https://github.com/crazyjohn/stupidbird/wiki)
