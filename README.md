@@ -71,9 +71,9 @@
 
 	
 
-3. 更完整的一个例子
+3. 吊炸天的例子
 ----------
-
+[用stupidbird写一个吊炸天的游戏引擎](https://github.com/crazyjohn/stupidbird/wiki/GameServer)
 
 4. 深入了解引擎
 ----------
