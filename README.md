@@ -28,7 +28,7 @@
 	[INFO] 14:27:39 - ServerNode.startup - IoProcessor already started.
 	[INFO] 14:27:39 - ServerNode.startup - The ServerNode already started.
 
-	如日志内容所说，目前启动了一个绑定本地ip，端口8001的服务。
+如日志内容所说，目前启动了一个绑定本地ip，端口8001的服务。
 
 2. 启动一个Comander节点
 ----------
