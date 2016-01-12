@@ -20,7 +20,7 @@
 	
 	}
 
-	以上代码构建了一个server节点，并且启动，输出日志如下：
+以上代码构建了一个server节点，并且启动，输出日志如下：
 
 	[INFO] 14:27:39 - ServerNode.assemble - Game thread count: 1
 	[INFO] 14:27:39 - ServerNode.startup - Startup io processor...
@@ -44,7 +44,7 @@
 		
 		}
 
-	如上代码创建了一个Commander节点，跟server节点的不同之处在于指挥官会启动一个telnet server进程，你可以通过telnet协议跟它进行交互，先看输出日志：
+如上代码创建了一个Commander节点，跟server节点的不同之处在于指挥官会启动一个telnet server进程，你可以通过telnet协议跟它进行交互，先看输出日志：
 
 		[INFO] 14:31:29 - ServerNode.assemble - Game thread count: 1
 		[INFO] 14:31:29 - IoProcessor.startup - IoProcessor bind info => ip: 0.0.0.0, port: 7001
@@ -53,7 +53,7 @@
 		[INFO] 14:31:29 - ServerNode.startup - IoProcessor already started.
 		[INFO] 14:31:29 - ServerNode.startup - The ServerNode already started.
 
-	如日志内容，启动了一个7001端口作为telnet端口，下面我们尝试进行交互下，使用telnet连接
+如日志内容，启动了一个7001端口作为telnet端口，下面我们尝试进行交互下，使用telnet连接
 
 	输入`telnet 127.0.0.1 7001`
 
@@ -67,7 +67,7 @@
 
 	输出： `holy shit, you'll destory everything, i'll be die.`
 
-	检查发现刚才启动的节点关闭。你可以自己扩展命令和Commander进行交互，以及实现你想要的功能。
+检查发现刚才启动的节点关闭。你可以自己扩展命令和Commander进行交互，以及实现你想要的功能。
 
 	
 
@@ -75,6 +75,6 @@
 ----------
 
 
-3. 深入了解
+3. 深入了解引擎
 ----------
 [StupidBird引擎wiki](https://github.com/crazyjohn/stupidbird/wiki)
