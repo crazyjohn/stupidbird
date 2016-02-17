@@ -1,0 +1,12 @@
+core/.settings/
+core/bin/
+db/.settings/
+db/bin/
+cluster/.settings/
+cluster/bin/
+game/.settings/
+game/bin/
+core/logs/
+db/logs/
+cluster/logs/
+game/logs/

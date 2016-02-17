@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<data level="1" costCoin="100" desc="level 1" />
+	<data level="2" costCoin="200" desc="level 2" />
+	<data level="3" costCoin="300" desc="level 3" />
+</root>
