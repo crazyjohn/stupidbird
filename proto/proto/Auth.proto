@@ -1,0 +1,47 @@
+option java_package = "com.stone.proto";
+option java_outer_classname = "Auths";
+
+import "Human.proto";
+
+// login message
+message Login {
+	required string puid = 1;
+}
+
+// login result
+message LoginResult {
+	required bool succeed = 1;
+	optional int32 errorCode = 2;
+}
+
+// role
+message Role {
+	required int64 roleId = 1;
+	required string name = 2;
+}
+
+// role list
+message RoleList {
+	repeated Role roleList = 1;
+}
+
+// create role
+message CreateRole {
+	required int32 templateId = 1;
+	required string name = 2;
+}
+// role info
+message RoleInfo {
+	required int64 roleId = 1;
+	required string name = 2;
+	required int32 level = 3;
+}
+// select role
+message SelectRole {
+	required int64 roleId = 1;
+}
+
+// enter scene
+message EnterScene {
+	required Human human = 1;
+}

@@ -1,0 +1,9 @@
+option java_package = "com.stone.proto.common";
+option java_outer_classname = "Commons";
+
+
+// item
+message Item {
+	required int32 templateId = 1;
+	required int32 count = 2;
+}

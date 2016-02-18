@@ -10,3 +10,13 @@ core/logs/
 db/logs/
 cluster/logs/
 game/logs/
+proto/.settings/
+proto/bin/
+.gradle/
+.metadata/
+.settings/
+core/build/
+game/build/
+db/build/
+cluster/build/
+proto/build/

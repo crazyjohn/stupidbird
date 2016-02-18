@@ -1,0 +1,25 @@
+option java_package = "com.stone.proto";
+option java_outer_classname = "Syncs";
+
+import "Human.proto";
+
+// sync
+message Sync {
+	required int64 syncTime = 1;
+	repeated Human humans = 2;
+}
+
+// move
+message Move {
+	required int64 id = 1;
+	required SceneObjectType objectType = 2;
+	required int32 x = 3;
+	required int32 y = 4;
+	required int32 sceneId = 5;
+}
+
+// new object appear
+message SceneObjectAppear {
+	required Human human = 1;
+	required Move pos = 2;
+}

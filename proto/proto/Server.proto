@@ -1,0 +1,34 @@
+option java_package = "com.stone.proto";
+option java_outer_classname = "Servers";
+
+
+// serverType
+enum ServerType {
+	GATE = 1;
+	GAME = 2;
+	WORLD = 3;
+	DB = 4;
+	CROSS = 5;
+}
+
+// serverInfo
+message ServerInfo {
+	required ServerType type = 1;
+	required string name = 2;
+}
+
+// registerInfo
+message Register {
+	required ServerInfo info = 1;
+}
+
+// unRegister
+message UnRegister {
+	required ServerInfo info = 2;
+}
+
+// game register to agent
+message GameRegisterToAgent {
+	repeated int32 sceneIds = 1;
+	required ServerInfo serverInfo = 2;
+}

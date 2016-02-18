@@ -1,0 +1,15 @@
+option java_package = "com.stone.proto";
+option java_outer_classname = "Humans";
+
+message Human {
+	required int64 guid = 1;
+	required int64 playerId = 2;
+	required string name = 3;
+	required int32 level = 4;
+}
+
+enum SceneObjectType {
+	MONSTER = 1;
+	HUMAN = 2;
+	NPC = 3;
+}
