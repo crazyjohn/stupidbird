@@ -14,6 +14,33 @@ public class NodeConfig implements Config {
 	private String telnetIp = "0.0.0.0";
 	private int telnetPort = 7001;
 	private int msgThreadCount = 1;
+	private boolean slowQueryLog = true;
+	private long longQueryTime = 1000;
+	private long slowLogMaxCount = 100;
+
+	public boolean isSlowQueryLog() {
+		return slowQueryLog;
+	}
+
+	public void setSlowQueryLog(boolean slowQueryLog) {
+		this.slowQueryLog = slowQueryLog;
+	}
+
+	public long getLongQueryTime() {
+		return longQueryTime;
+	}
+
+	public void setLongQueryTime(long longQueryTime) {
+		this.longQueryTime = longQueryTime;
+	}
+
+	public long getSlowLogMaxCount() {
+		return slowLogMaxCount;
+	}
+
+	public void setSlowLogMaxCount(long slowLogMaxCount) {
+		this.slowLogMaxCount = slowLogMaxCount;
+	}
 
 	public String getTelnetIp() {
 		return telnetIp;

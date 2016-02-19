@@ -1,5 +1,7 @@
 package com.stupidbird.core.server;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +22,13 @@ import com.stupidbird.core.session.NodeBindableSession;
  */
 public class DefaultDispatcher implements NodeDispatcher {
 	private Logger logger = LoggerFactory.getLogger("Server");
+	private Logger slowlogger = LoggerFactory.getLogger("Slow");
 	NodeExecutor executor;
+	// FIXME: crazyjohn 从配置读取
+	volatile boolean slowLogOpen = true;
+	final int slowLogMaxCount = 100;
+	volatile AtomicInteger logTimes = new AtomicInteger(0);
+	private long longQueryTime = 10;
 
 	public DefaultDispatcher(NodeExecutor executor) {
 		this.executor = executor;
@@ -36,6 +44,7 @@ public class DefaultDispatcher implements NodeDispatcher {
 				return;
 			}
 			// 执行
+			long beginTime = System.currentTimeMillis();
 			executor.execute(object, () -> {
 				try {
 					object.onMessage(protobufMsg);
@@ -43,6 +52,8 @@ public class DefaultDispatcher implements NodeDispatcher {
 					GameMonitor.catchException(e);
 					logger.error(String.format("Handle external message error, objectId: %d, msgType: %s",
 							object.getId(), protobufMsg.getType()));
+				} finally {
+					afterExecute(beginTime, protobufMsg);
 				}
 			});
 		} else if (msg instanceof Internal) {
@@ -67,5 +78,20 @@ public class DefaultDispatcher implements NodeDispatcher {
 			logger.warn(String.format("Unknown msg type, name: %s", msg.getClass().getSimpleName()));
 		}
 
+	}
+
+	private void afterExecute(long beginTime, ProtobufMessage protobufMsg) {
+		if (!slowLogOpen) {
+			return;
+		}
+		if (this.logTimes.get() >= this.slowLogMaxCount) {
+			return;
+		}
+		long costTime = System.currentTimeMillis() - beginTime;
+		if (costTime < longQueryTime ) {
+			return;
+		}
+		this.logTimes.incrementAndGet();
+		slowlogger.warn(String.format("Slow log, costTime: %d, msgType: %d", costTime, protobufMsg.getType()));
 	}
 }
