@@ -16,7 +16,7 @@ public class NodeConfig implements Config {
 	private int msgThreadCount = 1;
 	private boolean slowQueryLog = true;
 	private long longQueryTime = 1000;
-	private long slowLogMaxCount = 100;
+	private long slowLogMaxTimes = 100;
 
 	public boolean isSlowQueryLog() {
 		return slowQueryLog;
@@ -34,12 +34,12 @@ public class NodeConfig implements Config {
 		this.longQueryTime = longQueryTime;
 	}
 
-	public long getSlowLogMaxCount() {
-		return slowLogMaxCount;
+	public long getSlowLogMaxTimes() {
+		return slowLogMaxTimes;
 	}
 
-	public void setSlowLogMaxCount(long slowLogMaxCount) {
-		this.slowLogMaxCount = slowLogMaxCount;
+	public void setSlowLogMaxTimes(long slowLogMaxTimes) {
+		this.slowLogMaxTimes = slowLogMaxTimes;
 	}
 
 	public String getTelnetIp() {

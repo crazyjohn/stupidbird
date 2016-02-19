@@ -69,7 +69,7 @@ public class ServerNode implements Node, NodeDispatcher {
 		msgExecutor = GameExecutors.newBoundableExecutor("GameMessageExecutor", config.getMsgThreadCount());
 		logger.info(String.format("Game thread count: %d", config.getMsgThreadCount()));
 		// 分发器
-		dispatcher = new DefaultDispatcher(msgExecutor);
+		dispatcher = new DefaultDispatcher(msgExecutor, config);
 		this.defaultConfig = config;
 	}
 

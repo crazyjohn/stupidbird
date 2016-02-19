@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import com.stupidbird.core.actor.NodeDispatcher;
 import com.stupidbird.core.concurrent.NodeExecutor;
+import com.stupidbird.core.config.NodeConfig;
 import com.stupidbird.core.msg.Internal;
 import com.stupidbird.core.msg.Message;
 import com.stupidbird.core.msg.ProtobufMessage;
@@ -24,14 +25,16 @@ public class DefaultDispatcher implements NodeDispatcher {
 	private Logger logger = LoggerFactory.getLogger("Server");
 	private Logger slowlogger = LoggerFactory.getLogger("Slow");
 	NodeExecutor executor;
-	// FIXME: crazyjohn 从配置读取
+	// slow log
 	volatile boolean slowLogOpen = true;
-	final int slowLogMaxCount = 100;
+	final long slowLogMaxTimes;
 	volatile AtomicInteger logTimes = new AtomicInteger(0);
 	private long longQueryTime = 10;
 
-	public DefaultDispatcher(NodeExecutor executor) {
+	public DefaultDispatcher(NodeExecutor executor, NodeConfig config) {
 		this.executor = executor;
+		this.slowLogOpen = config.isSlowQueryLog();
+		this.slowLogMaxTimes = config.getSlowLogMaxTimes();
 	}
 
 	@Override
@@ -84,11 +87,11 @@ public class DefaultDispatcher implements NodeDispatcher {
 		if (!slowLogOpen) {
 			return;
 		}
-		if (this.logTimes.get() >= this.slowLogMaxCount) {
+		if (this.logTimes.get() >= this.slowLogMaxTimes) {
 			return;
 		}
 		long costTime = System.currentTimeMillis() - beginTime;
-		if (costTime < longQueryTime ) {
+		if (costTime < longQueryTime) {
 			return;
 		}
 		this.logTimes.incrementAndGet();
