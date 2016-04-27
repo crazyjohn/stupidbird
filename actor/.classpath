@@ -4,12 +4,18 @@
 	<classpathentry kind="src" path="config"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/core"/>
-	<classpathentry kind="lib" path="lib/akka-actor_2.11-2.3.14.jar"/>
-	<classpathentry kind="lib" path="lib/akka-cluster_2.11-2.3.14.jar"/>
-	<classpathentry kind="lib" path="lib/akka-contrib_2.11-2.3.14.jar"/>
-	<classpathentry kind="lib" path="lib/akka-remote_2.11-2.3.14.jar"/>
-	<classpathentry kind="lib" path="lib/akka-slf4j_2.11-2.3.14.jar"/>
-	<classpathentry kind="lib" path="lib/config-1.2.1.jar"/>
-	<classpathentry kind="lib" path="lib/scala-library-2.11.5.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/proto"/>
+	<classpathentry kind="lib" path="lib/akka-actor_2.11-2.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/akka-cluster_2.11-2.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/akka-cluster-metrics_2.11-2.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/akka-cluster-sharding_2.11-2.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/akka-contrib_2.11-2.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/akka-protobuf_2.11-2.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/akka-remote_2.11-2.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/akka-slf4j_2.11-2.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/config-1.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/scala-java8-compat_2.11-0.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/scala-library-2.11.8.jar"/>
+	<classpathentry kind="lib" path="lib/akka-cluster-tools_2.11-2.4.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
