@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="lib/scala-java8-compat_2.11-0.7.0.jar"/>
 	<classpathentry kind="lib" path="lib/scala-library-2.11.8.jar"/>
 	<classpathentry kind="lib" path="lib/akka-cluster-tools_2.11-2.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/netty-3.10.3.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
