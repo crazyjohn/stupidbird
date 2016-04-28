@@ -1,6 +1,6 @@
-package com.stupidbird.actor.remote.client;
+package com.stupidbird.actor.example.remote;
 
-import com.stupidbird.actor.ActorMessage;
+import com.stupidbird.actor.example.local.ActorMessage;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 

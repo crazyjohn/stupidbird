@@ -1,4 +1,4 @@
-package com.stupidbird.actor;
+package com.stupidbird.actor.example.local;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;

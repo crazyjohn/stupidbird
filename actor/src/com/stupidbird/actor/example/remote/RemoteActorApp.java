@@ -1,4 +1,4 @@
-package com.stupidbird.actor.remote;
+package com.stupidbird.actor.example.remote;
 
 import com.typesafe.config.ConfigFactory;
 

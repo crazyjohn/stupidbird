@@ -1,4 +1,4 @@
-package com.stupidbird.actor.remote;
+package com.stupidbird.actor.example.remote;
 
 import akka.actor.UntypedActor;
 import akka.event.Logging;

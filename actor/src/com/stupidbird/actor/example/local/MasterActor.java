@@ -1,6 +1,6 @@
-package com.stupidbird.actor;
+package com.stupidbird.actor.example.local;
 
-import com.stupidbird.actor.ActorMessage.Startup;
+import com.stupidbird.actor.example.local.ActorMessage.Startup;
 
 import akka.actor.UntypedActor;
 import akka.event.Logging;
