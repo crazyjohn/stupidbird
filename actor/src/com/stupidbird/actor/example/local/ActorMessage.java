@@ -9,10 +9,6 @@ public class ActorMessage {
 	}
 
 	static class Startup implements Serializable {
-
-		/**
-		 * 
-		 */
 		private static final long serialVersionUID = 1L;
 	}
 

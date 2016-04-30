@@ -13,7 +13,7 @@ import akka.actor.Props;
 public class ClusterApp {
 
 	public static void main(String[] args) {
-		List<String> ports = new ArrayList<String>(Arrays.asList(new String[] { "2551", "2552", "0" }));
+		List<String> ports = new ArrayList<String>(Arrays.asList(new String[] { "2555", "2556" }));
 		ports.stream().forEach(port -> {
 			Config config = ConfigFactory.parseString("akka.remote.netty.tcp.port=" + port)
 					.withFallback(ConfigFactory.load().getConfig("Cluster"));
