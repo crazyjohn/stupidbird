@@ -31,6 +31,9 @@ public class TransformationFrontend extends UntypedActor {
 			// terminated
 			Terminated terminated = (Terminated) msg;
 			backends.remove(terminated.getActor());
+		} else if (msg instanceof JobFailed) {
+			JobFailed failed = (JobFailed) msg;
+			System.out.println(failed.getReason());
 		} else {
 			unhandled(msg);
 		}
