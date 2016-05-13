@@ -21,3 +21,4 @@ db/build/
 cluster/build/
 proto/build/
 .recommenders/
+broker/logs/
